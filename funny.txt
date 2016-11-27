@@ -1,0 +1,24 @@
+1. 查找字符串中出现次数最多的字符，及其出现的次数
+var str="Hello World";
+var reg=/(.)\1+/g;
+arr=str.split("").sort().join("").match(reg)
+                       .sort(function(a,b){return b.length-a.length;})
+
+
+4. 函数currying: 基于现有函数，创建一个已经设置好部分参数的新函数。在调用时，随时填补剩余参数，或追加更多新参数
+
+如何实现currying:
+    1. 外层函数返回一个内层函数
+    2. 内层函数将外层传入的变量和自己的变量同时操作
+    3. 内层函数就返回函数本身
+    4. 如果要输出计算的结果，n，需要重写toString方法
+function add(n){//n被保护的局部变量
+     return function(m){
+          n+=m;
+          arguments.callee.toString=function(){return n};
+          return arguments.callee;
+     }
+}
+
+alert(add(1)(2)(3));//6
+alert(add(1)(2)(3)(4));//10
