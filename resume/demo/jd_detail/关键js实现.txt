@@ -1,0 +1,58 @@
+JD 详情页
+
+
+
+$("#category").onmouseover=
+		$("#category").onmouseout=function(){
+		//如果id为cate_box的ul的display属性为"block"?
+		//	将其display改为""，否则改为"block"
+		$("#cate_box").style.display=
+			$("#cate_box").style.display=="block"?
+											"":"block";
+	}
+
+
+
+商品评价一直显示的date_set=-1 ，给其他div 加相同开头project_ 加class date_0 1 2 3 与遍历顺序对应 用^project_获取所有div  点击时获取target target.dataset.i！=-1时  比较i!=target.dataset.i  
+	for(var i=0;i<contents.length;i++){
+				//如果循环变量i!=target的i
+				//就将当前元素隐藏
+				//否则，将当前元素显示
+					contents[i].style.display=
+					  i!=target.dataset.i?"none":"block";
+				}
+			}else{//否则
+			//遍历contents中每个元素
+			//隐藏当前元素
+				for(var i=0;i<contents.length;i++){
+					contents[i].style.display="none";
+				}
+
+
+
+获取目标，nodeName==IMG，获取剪切拼接src，即获得大图的src
+
+
+//为ul绑定onmouseover事件
+		//获取目标，nodeName==IMG，获取剪切拼接src，即获得大图的src
+		self.ul.addEventListener("mouseover",function(){
+			//	获得事件对象e
+			var e=window.event||arguments[0];
+			//  获得目标对象target
+			var target=e.srcElement||e.target;
+			if(target.nodeName=="IMG"){//如果target是img
+				//获得target的src属性，保存在变量src中
+				var src=target.src;
+				//在src中找最后一个.的位置，保存在变量i中
+				var i=src.lastIndexOf(".");
+		//		拼接src开始位置~i之前的子字符串+-m+i~结尾的子字符串，将结果字符串设置到id为mImg的元素的src属性上
+				$("#mImg").src=
+					src.slice(0,i)+"-m"+src.slice(i);
+			}
+		},false);
+
+
+#mask 和#supmask   鼠标相对supmask的x y 即#mask的中点，减去1/2#mask的宽高即为 mask左上角相对supmask左上角的位置。 将mask的左上角放到larg的左上角需要向左上移动即为-x -y  再乘以放缩倍数即可。
+
+
+
